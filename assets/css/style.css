@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.progress-bar{
+    height: 50px;
+    padding: 5px;
+    background-color: #cccccc;
+
+    display: flex;
+    /* --progress: 20; */
+}
+
+.progress-bar::before{
+    content: "";
+    /* width: 50%; */
+    /* background-color: red; */
+
+    width: calc(var(--progress) * 1%);
+
+    background-color: hsl(calc(var(--progress) * 1.2) , 80%, 50%);
+  }
