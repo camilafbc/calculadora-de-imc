@@ -6,7 +6,7 @@ const barra = document.querySelector(".progress-bar")
 const btn = document.getElementById("btn")
 
 btn.addEventListener('click', () => {
-    let imc = parseFloat(peso.value / (altura.value*altura.value))
-    
+   const imc = peso.value/(Math.pow(altura.value, 2))
+    console.log(imc)
     barra.style.setProperty('--progress', imc);
 })

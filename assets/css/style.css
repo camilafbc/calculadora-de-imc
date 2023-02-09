@@ -10,15 +10,25 @@
     background-color: #cccccc;
 
     display: flex;
-    /* --progress: 20; */
+    border-radius: 2rem;
+}
+
+.progress-bar div{
+    width: calc(var(--progress) *2%);
+    background-color: hsl(calc(var(--progress) * -10), 80%, 50%);
+    border-radius: 2rem;
 }
 
 .progress-bar::before{
-    content: "";
+    /* content: ""; */
     /* width: 50%; */
     /* background-color: red; */
 
-    width: calc(var(--progress) * 1%);
+    /* width: calc(var(--progress) * 1%); */
 
-    background-color: hsl(calc(var(--progress) * 1.2) , 80%, 50%);
-  }
+    /* background-color: hsl(calc(var(--progress) * 1) , 80%, 50%); */
+
+    /* transition: width linear 2s; */
+} 
+
+
