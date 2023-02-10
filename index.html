@@ -10,26 +10,33 @@
 </head>
 <body>
     <div class="container">
+        <h2>Calculadora de IMC</h2>
         <form>
             <div>
-                <label for="altura">Informe sua altura(em metros): </label>
-                <input type="text" name="altura" placeholder="Ex: 1,71" required>
+                <label for="height">Informe sua altura (em m): </label>
+                <br>
+                <input type="text" name="height" placeholder="Ex: 1,71" required>
             </div>
             <br>
             <div>
-                <label for="peso">Informe seu peso (em kg): </label>
-                <input type="text" name="peso" placeholder="Ex: 62,5" required>
+                <label for="weight">Informe seu peso (em kg): </label>
+                <br>
+                <input type="text" name="weight" placeholder="Ex: 62,5" required>
             </div>
         </form>
-        <button type="button" id="btn">Calcular IMC</button>
-        <br>
-        <br>
-        <div id="fade" class="hide"></div>
-        <div id="modal" class="hide">
-            <button id="close-modal">Fechar Modal</button>
-            <div class="progress-bar">
-                <span class="bar"></span>
-            </div>
+        <button type="button" id="btn">Calcular</button>
+    </div>
+
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide">
+        <button id="close-modal">x</button>
+        <div class="progress-bar">
+            <span class="bar"></span>
+        </div>
+        <div class="modal-text">
+            <p>Seu IMC é <span id="imc-value"></span></p>
+            <p>Esse valor indica que você está <span id="imc-text"></span></p>
+            <p class="text">Atenção: o cálculo de IMC não leva em consideração a composição corporal. Por esse motivo, pessoas com muita massa muscular, como é o caso de alguns atletas, podem apresentar um IMC acima do normal. O ideal é consultar um nutricionista para fazer uma avaliação mais detalhada.</p>
         </div>
     </div>
     

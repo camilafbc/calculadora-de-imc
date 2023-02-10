@@ -6,12 +6,68 @@
 
 
 body{
-    /* background-color: #ffff00; */
+    background-color: #13293d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* button{
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #f5f5f5 ;
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 2rem;
+}
+
+h2{
+    color: #006494;
+}
+
+form{
+    margin: 2rem 0;
+    text-align: left;
+}
+
+form div{
+    margin-bottom: 1rem;
+}
+
+label{
+    color: #1b98e0;
+}
+
+input[type=text]{
+    outline: 0;
+    margin-top: .25rem;
+    padding: .5rem;
+    border: none;
+    border-bottom: 1px solid #247ba0;
+    background-color: transparent;
+    color: #006494;
+}
+
+input[type=text]:focus{
+    scale: 1.1;
+}
+
+#btn{
     cursor: pointer;
-} */
+    opacity: 0.8;
+    padding: 1.25rem 0.75rem;
+    border: 1px solid #006494;;
+    border-radius: 1rem;
+    color: #006494;
+    font-size: 1rem;
+}
+
+#btn:hover{
+    background-color: #006494;
+    color: #f5f5f5;
+}
+
 
 #fade, #modal{
     transition: .5s;
@@ -35,11 +91,14 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    background-color: #FFF;
+    background-color: #ffffff;
     width: 500px;
     max-width: 90%;
     padding: 1.2rem;
     border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #fade.hide,
@@ -52,9 +111,19 @@ body{
     top: 0;
 }
 
+#close-modal{
+    cursor: pointer;
+    opacity: 0.8;
+    border: none;
+    width: 1rem;
+    height: 1rem;
+    align-self: flex-end;
+}
+
 .progress-bar{
-    height: 50px;
+    height: 25px;
     padding: 5px;
+    margin: 1.25rem 0;
     background-color: #cccccc;
 
     display: flex;
@@ -62,12 +131,24 @@ body{
 }
 
 .bar{
+    --blue: #0edceb;
+    --green: #11f737;
+    --yellow: #ffff00;
+    --red: #ff0808;
     width: calc(var(--progress) *2%);
-    /* background-color: hsl(calc(var(--progress) * -10), 80%, 50%); */
     border-radius: 2rem;
     transition: width linear 2s;
 }
 
+.modal-text p{
+    margin-bottom: 1rem;
+}
 
+#imc-value, #imc-text{
+    font-weight: bold;
+}
 
+.text{
+    font-size: 10px;
+}
 
