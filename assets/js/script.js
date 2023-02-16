@@ -21,11 +21,17 @@ const toggleModal = () => {
     botao.addEventListener('click', toggleModal)
 })
 
+// const filtroTeclas = function(event) {
+//     return ((event.keyCode >= 48 && event.charCode <= 57) || event.charCode == 46)
+//   }
+
+
 const imcCalc = () => {
+
+
     const heightValue = parseFloat(height.value.replace(",", "."))
     const weightValue = parseFloat(weight.value.replace(",", "."))
-    
-    // if((heightValue !== Number) || (heightValue === "") ||(weightValue !== Number) || (weightValue === "")) return
+
 
     const imc = (weightValue/(Math.pow(heightValue, 2))).toFixed(2)
     console.log(imc)
