@@ -53,6 +53,10 @@ input[type=text]:focus{
     scale: 1.1;
 }
 
+input[type=text]::placeholder{
+    opacity: 0.6;
+}
+
 #btn{
     cursor: pointer;
     opacity: 0.8;
