@@ -22,32 +22,34 @@ const toggleModal = () => {
 })
 
 
-height.addEventListener('keydown', function(e){
-    // console.log(`A tecla pressionada foi ${e.target.value}`)
-    // console.log(`Testando o which. A tecla foi ${e}`)
-    if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
-        if(((e.key == "," || e.key == ".") && (height.value.includes(",") || height.value.includes(".")))){
-            e.preventDefault()
-            // console.log("Acrescentando a mais :(")
-        }
-        return true 
-    } else {
-        e.preventDefault()
-    }
-})
+// height.addEventListener('input', function(e){
+//     console.log(`A tecla pressionada foi ${e.code}`)
+//     console.log(`Testando o which. A tecla foi ${String.fromCharCode(e.key)}`)
+//     if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
+//         if(((e.key == "," || e.key == ".") && (height.value.includes(",") || height.value.includes(".")))){
+//             e.preventDefault()
+//             // console.log("Acrescentando a mais :(")
+//         }
+//         return true 
+//     } else {
+//         e.preventDefault()
+//     }
+// })
 
-weight.addEventListener('keypress', function(e){
-    // console.log(`A tecla pressionada foi ${e.key}`)
-    if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
-        if(((e.key == "," || e.key == ".") && (weight.value.includes(",") || weight.value.includes(".")))){
-            e.preventDefault()
-            // console.log("Acrescentando a mais :(")
-        }
-        return true 
-    } else {
-        e.preventDefault()
-    }
-})
+
+
+// weight.addEventListener('keypress', function(e){
+//     // console.log(`A tecla pressionada foi ${e.key}`)
+//     if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
+//         if(((e.key == "," || e.key == ".") && (weight.value.includes(",") || weight.value.includes(".")))){
+//             e.preventDefault()
+//             // console.log("Acrescentando a mais :(")
+//         }
+//         return true 
+//     } else {
+//         e.preventDefault()
+//     }
+// })
 
 
 
