@@ -13,6 +13,7 @@ const fade = document.querySelector("#fade")
 const imcResult = document.getElementById("imc-value")
 const imcText = document.getElementById("imc-text")
 
+
 const toggleModal = () => {
     [modal, fade].forEach((elemento) => elemento.classList.toggle("hide"))
 }
@@ -22,49 +23,29 @@ const toggleModal = () => {
 })
 
 
-// height.addEventListener('input', function(e){
-//     console.log(`A tecla pressionada foi ${e.code}`)
-//     console.log(`Testando o which. A tecla foi ${String.fromCharCode(e.key)}`)
-//     if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
-//         if(((e.key == "," || e.key == ".") && (height.value.includes(",") || height.value.includes(".")))){
-//             e.preventDefault()
-//             // console.log("Acrescentando a mais :(")
-//         }
-//         return true 
-//     } else {
-//         e.preventDefault()
-//     }
-// })
+
+height.addEventListener('input', function(){
+    height.value = height.value.replace(/[^0-9\b.]/g, '');
+    height.value = height.value.replace(/(\..*)\./g, '$1')
+})
 
 
-
-// weight.addEventListener('keypress', function(e){
-//     // console.log(`A tecla pressionada foi ${e.key}`)
-//     if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
-//         if(((e.key == "," || e.key == ".") && (weight.value.includes(",") || weight.value.includes(".")))){
-//             e.preventDefault()
-//             // console.log("Acrescentando a mais :(")
-//         }
-//         return true 
-//     } else {
-//         e.preventDefault()
-//     }
-// })
-
+weight.addEventListener('input', function(){
+    weight.value = weight.value.replace(/[^0-9\b.]/g, '');
+    weight.value = weight.value.replace(/(\..*)\./g, '$1')
+})
 
 
 const imcCalc = () => {
-    const heightValue = parseFloat(height.value.replace(",", "."))
-    const weightValue = parseFloat(weight.value.replace(",", "."))
+    const heightValue = parseFloat(height.value)
+    const weightValue = parseFloat(weight.value)
 
 
     const imc = (weightValue/(Math.pow(heightValue, 2))).toFixed(2)
-    // console.log(imc)
     imcResult.innerText = imc
 
-    if(isNaN(imc)){
-        return
-    } else {toggleModal();}
+    if(isNaN(imc) || imc === "" || imc == "0.00") return 
+    else {toggleModal();}
 
     progessBar.style.setProperty('--progress', imc);
 
