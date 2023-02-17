@@ -22,8 +22,9 @@ const toggleModal = () => {
 })
 
 
-height.addEventListener('keypress', function(e){
-    // console.log(`A tecla pressionada foi ${e.key}`)
+height.addEventListener('keydown', function(e){
+    // console.log(`A tecla pressionada foi ${e.target.value}`)
+    // console.log(`Testando o which. A tecla foi ${e}`)
     if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
         if(((e.key == "," || e.key == ".") && (height.value.includes(",") || height.value.includes(".")))){
             e.preventDefault()
