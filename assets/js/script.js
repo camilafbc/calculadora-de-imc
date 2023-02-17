@@ -21,21 +21,47 @@ const toggleModal = () => {
     botao.addEventListener('click', toggleModal)
 })
 
-// const filtroTeclas = function(event) {
-//     return ((event.keyCode >= 48 && event.charCode <= 57) || event.charCode == 46)
-//   }
+
+height.addEventListener('keypress', function(e){
+    // console.log(`A tecla pressionada foi ${e.key}`)
+    if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
+        if(((e.key == "," || e.key == ".") && (height.value.includes(",") || height.value.includes(".")))){
+            e.preventDefault()
+            // console.log("Acrescentando a mais :(")
+        }
+        return true 
+    } else {
+        e.preventDefault()
+    }
+})
+
+weight.addEventListener('keypress', function(e){
+    // console.log(`A tecla pressionada foi ${e.key}`)
+    if((e.key >= 0 && e.key <= 9 || e.key == "," || e.key == ".")){
+        if(((e.key == "," || e.key == ".") && (weight.value.includes(",") || weight.value.includes(".")))){
+            e.preventDefault()
+            // console.log("Acrescentando a mais :(")
+        }
+        return true 
+    } else {
+        e.preventDefault()
+    }
+})
+
 
 
 const imcCalc = () => {
-
-
     const heightValue = parseFloat(height.value.replace(",", "."))
     const weightValue = parseFloat(weight.value.replace(",", "."))
 
 
     const imc = (weightValue/(Math.pow(heightValue, 2))).toFixed(2)
-    console.log(imc)
+    // console.log(imc)
     imcResult.innerText = imc
+
+    if(isNaN(imc)){
+        return
+    } else {toggleModal();}
 
     progessBar.style.setProperty('--progress', imc);
 
@@ -55,9 +81,11 @@ const imcCalc = () => {
         bar.style.setProperty('background-color', 'var(--red)')
         imcText.innerText = "em grau de Obesidade."
     }
+
+    height.value = ""
+    weight.value = ""
 }
 
 btn.addEventListener('click', () => {
-    toggleModal();
     imcCalc();
 })
