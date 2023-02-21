@@ -11,5 +11,6 @@ Calculadora de IMC que recebe como entrada a altura e o peso do usuário retorna
 ## Conceitos trabalhados:
 * Manipulação do DOM e Eventos no JS;
 * Introdução a expressões regulares;
+* ES modules;
 * Limitação de caracteres no input;
 * Criação de um modal.
